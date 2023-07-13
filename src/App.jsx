@@ -41,6 +41,7 @@ function App() {
       <input></input>
       <br></br>
     </div>
+    <br></br>
     <div>
       <label>Date of Birth: </label>
       <input type="date"></input>
@@ -54,7 +55,6 @@ function App() {
         name="answer" value="female" required></input>
         <label>Female</label>
     </div>
-
 
     </>
   )
