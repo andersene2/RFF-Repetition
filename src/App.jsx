@@ -17,6 +17,22 @@ function App() {
   const [city, setCity] = useState("")
   const [state, setState] = useState("")
 
+  function clearAllFields() {
+    setFirstName("")
+    setLastName("")
+    setEmailAdress("")
+    setConfirmEmail("")
+    setCreatePassword("")
+    setDOB("")
+    setGender("")
+    setPhone("")
+    setStreetAddress("")
+    setCountry("")
+    setZipCode("")
+    setCity("")
+    setState("")
+  }
+
 
   return (
     <>
