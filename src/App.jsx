@@ -8,6 +8,7 @@ function App() {
   const [emailAddress, setEmailAdress] = useState("")
   const [confirmEmail, setConfirmEmail] = useState("")
   const [createPassword, setCreatePassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("") 
   const [DOB, setDOB] = useState("")
   const [gender, setGender] = useState("")
   const [phone, setPhone] = useState("")
@@ -18,19 +19,20 @@ function App() {
   const [state, setState] = useState("")
 
   function clearAllFields() {
-    setFirstName("")
-    setLastName("")
-    setEmailAdress("")
-    setConfirmEmail("")
-    setCreatePassword("")
-    setDOB("")
-    setGender("")
-    setPhone("")
-    setStreetAddress("")
-    setCountry("")
-    setZipCode("")
-    setCity("")
-    setState("")
+    setFirstName("");
+    setLastName("");
+    setEmailAdress("");
+    setConfirmEmail("");
+    setCreatePassword("");
+    setConfirmPassword("");
+    setDOB("");
+    setGender("");
+    setPhone("");
+    setStreetAddress("");
+    setCountry("");
+    setZipCode("");
+    setCity("");
+    setState("");
   }
 
 
@@ -64,32 +66,44 @@ function App() {
           </label>
 
           <label>Last Name: 
-          <input type="text" name="last_Name" value={lastName} onChange={e => setLastName(e.target.value)}></input>
+          <input type="text" name="last_Name" value={lastName} 
+          onChange={e => setLastName(e.target.value)}></input>
           </label>
 
           <br></br>
           <br></br>
 
-          <label>Email Address</label>
-          <input></input>
+          <label>Email Address
+          <input type='text' name='email_address' value={emailAddress} 
+          onChange={e => setEmailAdress(e.target.value)}></input>
+          </label>
 
-          <label>Confirm Email: </label>
-          <input></input>
+          <label>Confirm Email: 
+          <input type='text' name='confirm_email' value={confirmEmail}
+          onChange={e => setConfirmEmail(e.target.value)}></input>
+          </label>
 
           <br></br>
           <br></br>
 
-          <label>Create Password: </label>
-          <input></input>
+          <label>Create Password: 
+          <input type='text' name='create_password' value={createPassword}
+          onChange={e => setCreatePassword(e.target.value)}></input>
+          </label>
 
-          <label>Confirm Password: </label>
-          <input></input>
+          <label>Confirm Password: 
+          <input type='text' name='confirm_password' value={confirmPassword}
+          onChange={e => setConfirmPassword(e.target.value)}></input>
+          </label>
+
           <br></br>
         </div>
         <br></br>
         <div>
-          <label>Date of Birth: </label>
-          <input type="date"></input>
+          <label>Date of Birth: 
+          <input type="date" name='d.o.b.' value={DOB}
+          onChange={e => setDOB(e.target.value)}></input>
+          </label>
 
           <span>Male or Female: </span>
           <input id="male" type="radio"
@@ -101,29 +115,35 @@ function App() {
           <label>Female</label>
           <br></br>
           <br></br>
-          <label>Phone</label>
+          <label type='text' name='phone' value={phone}
+          onChange={e => setPhone(e.target.value)}>Phone</label>
           <input></input>
         </div>
         <br></br>
         <div>
           <label>Street Address</label>
-          <input></input>
+          <input type='text' name='street_address' value={streetAddress}
+          onChange={e => setStreetAddress(e.target.value)}></input>
 
           <label>Country</label>
-          <input></input>
+          <input type='text' name='country' value={country}
+          onChange={e => setCountry(e.target.value)}></input>
 
           <br></br>
 
           <label>Zip Code</label>
-          <input></input>
+          <input type='text' name='zipCode' value={zipCode}
+          onChange={e => setZipCode(e.target.value)}></input>
 
           <label>City</label>
-          <input></input>
+          <input type='text' name='city' value={city}
+          onChange={e => setCity(e.target.value)}></input>
 
           <br></br>
 
           <label>State</label>
-          <input></input>
+          <input type='text' name='state' value={state}
+          onChange={e => setState(e.target.value)}></input>
         </div>
 
       </div>
