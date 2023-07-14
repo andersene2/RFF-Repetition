@@ -6,6 +6,7 @@ function App() {
 
   return (
     <>
+    <div style={{ width:"620px", height:"700px", border:"2px solid gray"}}>
     <div className='formHead'>
       <h2 className='registrant-title'>Registrant #
       <span className='registrantNum'>1</span></h2>
@@ -27,7 +28,7 @@ function App() {
 
     </div>
     <br></br>
-    <div>
+    <div  >
       <label>First Name: </label>
       <input></input>
 
@@ -67,7 +68,7 @@ function App() {
         name="answer" value="female" required></input>
         <label>Female</label>
     </div>
-
+    </div>
     </>
   )
 }
