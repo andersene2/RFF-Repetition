@@ -34,11 +34,21 @@ function App() {
     setCity("");
     setState("");
   }
+  function CountrySelector() {
+    const [value, setValue] = useState('')
+    const options = useMemo(() => countryList().getData(), [])
+  
+    const changeHandler = value => {
+      setValue(value)
+    }
+  
+    return <Select options={options} value={value} onChange={changeHandler} />
+  }
 
 
   return (
     <>
-      <div style={{ width: "620px", height: "700px", border: "1px solid gray" }}>
+      <div style={{ width: "620px", height: "800px", border: "1px solid gray" }}>
         <div className='formHead'>
           <h2 className='registrant-title'>Registrant #
             <span className='registrantNum'>1</span></h2>
@@ -105,7 +115,7 @@ function App() {
               onChange={e => setDOB(e.target.value)}></input>
           </label>
 
-          <span>Male or Female: </span>
+          <span>Gender: </span>
           <input id="male" type="radio"
             name="answer" value="male" required></input>
           <label>Male</label>
@@ -116,39 +126,51 @@ function App() {
           <br></br>
           <br></br>
           <label type='text' name='phone' value={phone}
-            onChange={e => setPhone(e.target.value)}>Phone</label>
+            onChange={e => setPhone(e.target.value)}>Phone:</label>
           <input></input>
         </div>
         <br></br>
         <div>
-          <label>Street Address</label>
+          <label>Street Address:</label>
           <input type='text' name='street_address' value={streetAddress}
             onChange={e => setStreetAddress(e.target.value)}></input>
 
-          <label>Country</label>
+          <label>Country:</label>
           <input type='text' name='country' value={country}
             onChange={e => setCountry(e.target.value)}></input>
 
           <br></br>
 
-          <label>Zip Code</label>
+          <label>Zip Code:</label>
           <input type='text' name='zipCode' value={zipCode}
             onChange={e => setZipCode(e.target.value)}></input>
 
-          <label>City</label>
+          <label>City:</label>
           <input type='text' name='city' value={city}
             onChange={e => setCity(e.target.value)}></input>
 
           <br></br>
 
-          <label>State</label>
+          <label>State:</label>
           <input type='text' name='state' value={state}
             onChange={e => setState(e.target.value)}></input>
         </div>
         <div>
           <h2>Choose Your Event</h2>
         </div>
-
+        <div>
+          <input id="5K" type="radio"
+          name="race" value="5k" required></input>
+          <span>5K ($35.00 + $3.60 SignUp Fee)</span> 
+            <br></br>
+          <input id="5k-Virtual" type='radio'
+          name='race' value='5K-Virtual'required></input>
+          <span>5k Virtual ($35.00 + $3.60 SignUp Fee)</span>
+        </div>
+        <br></br>
+        <button>Add Another Registrant</button>
+        <br></br>
+        <button>Continue</button>
       </div>
     </>
   )
