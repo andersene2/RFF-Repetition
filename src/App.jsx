@@ -20,6 +20,7 @@ function App() {
   const [state, setState] = useState("")
 
   function clearAllFields() {
+
     setRegistering("")
     setFirstName("");
     setLastName("");
@@ -28,7 +29,7 @@ function App() {
     setCreatePassword("");
     setConfirmPassword("");
     setDOB("");
-    setGender("");
+    setSelectedOption('');
     setPhone("");
     setStreetAddress("");
     setCountry("");
@@ -36,6 +37,12 @@ function App() {
     setCity("");
     setState("");
   }
+
+const [selectedOption, setSelectedOption] = useState('');
+
+const handleOptionChange = (event) => {
+  setSelectedOption(event.target.value);
+};
 
   return (
     <>
@@ -110,15 +117,21 @@ function App() {
           </label>
 
           <span>Gender: </span>
-          <input id="male" type="radio"
-            name="answer" value={gender} 
-            onChange={e => setGender(e.target.value)} required></input>
-          <label>Male</label>
+          <label>
+            <input id="male" type="radio"
+              name="answer" value='male' 
+              checked={selectedOption === 'male'}
+              onChange={handleOptionChange} required></input>
+            Male
+          </label>
 
-          <input id="female" type="radio"
-            name="answer" value={gender} 
-            onChange={e => setGender(e.target.value)} required></input>
-          <label>Female</label>
+          <label>
+            <input id="female" type="radio"
+              name="answer" value='female'
+              checked={selectedOption === 'female'} 
+              onChange={handleOptionChange} required></input>
+            Female
+          </label>
 
           <br></br>
           <br></br>
@@ -170,6 +183,7 @@ function App() {
         <br></br>
         <button>Continue</button>
       </div>
+      
     </>
   )
 }
