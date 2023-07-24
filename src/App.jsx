@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [] = useState("")
+  const [registering, setRegistering] = useState("")
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [emailAddress, setEmailAdress] = useState("")
@@ -19,6 +20,7 @@ function App() {
   const [state, setState] = useState("")
 
   function clearAllFields() {
+    setRegistering("")
     setFirstName("");
     setLastName("");
     setEmailAdress("");
@@ -34,17 +36,6 @@ function App() {
     setCity("");
     setState("");
   }
-  function CountrySelector() {
-    const [value, setValue] = useState('')
-    const options = useMemo(() => countryList().getData(), [])
-  
-    const changeHandler = value => {
-      setValue(value)
-    }
-  
-    return <Select options={options} value={value} onChange={changeHandler} />
-  }
-
 
   return (
     <>
@@ -62,7 +53,10 @@ function App() {
         <br></br>
         <div>
           <label htmlFor='applicant'>Who are you registering: </label>
-          <select id='applicant' required>
+          <select id='applicant' value={registering} 
+          onChange={e => setRegistering(e.target.value)} required>
+            <option disabled={true} value="">-Choose option-</option>
+
             <option value="me">Me, 18+</option>
             <option value="other_adult">Other Adult, 18+</option>
             <option value="minor">Minor, Under 18</option>
@@ -117,17 +111,21 @@ function App() {
 
           <span>Gender: </span>
           <input id="male" type="radio"
-            name="answer" value="male" required></input>
+            name="answer" value={gender} 
+            onChange={e => setGender(e.target.value)} required></input>
           <label>Male</label>
 
           <input id="female" type="radio"
-            name="answer" value="female" required></input>
+            name="answer" value={gender} 
+            onChange={e => setGender(e.target.value)} required></input>
           <label>Female</label>
+
           <br></br>
           <br></br>
-          <label type='text' name='phone' value={phone}
-            onChange={e => setPhone(e.target.value)}>Phone:</label>
-          <input></input>
+
+          <label>Phone:</label>
+          <input  type='text' name='phone' value={phone}
+            onChange={e => setPhone(e.target.value)}></input>
         </div>
         <br></br>
         <div>
