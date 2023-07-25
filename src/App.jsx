@@ -142,7 +142,7 @@ function App() {
   return (
     <>
       <div style={{ width: "620px", height: "800px", border: "1px solid gray" }}>
-        <form>
+        <form >
           <div className='formHead'>
             <h2 className='registrant-title'>Registrant #
               <span className='registrantNum'>1</span></h2>
@@ -191,9 +191,10 @@ function App() {
             <br></br>
             <br></br>
 
-            <label>Email Address:
+            <label htmlFor='email'>Email Address:
               <input
                 type='text'
+                id='email'
                 name='email_address'
                 placeholder='Type your email...'
                 value={emailAddress}
