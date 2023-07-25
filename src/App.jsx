@@ -8,7 +8,7 @@ function App() {
   const [lastName, setLastName] = useState("")
   const [emailAddress, setEmailAdress] = useState("")
   const [confirmEmail, setConfirmEmail] = useState("")
-  const [createPassword, setCreatePassword] = useState("")
+  const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [DOB, setDOB] = useState("")
   const [selectedOption, setSelectedOption] = useState('');
@@ -21,6 +21,7 @@ function App() {
   const [raceOption, setRaceOption] = useState("");
 
 
+
   function clearAllFields() {
 
     setRegistering("")
@@ -28,7 +29,7 @@ function App() {
     setLastName("");
     setEmailAdress("");
     setConfirmEmail("");
-    setCreatePassword("");
+    setPassword("");
     setConfirmPassword("");
     setDOB("");
     setSelectedOption(''); //state for gender 
@@ -41,7 +42,6 @@ function App() {
     setRaceOption(""); // state for Race Choice
   }
 
-
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -49,9 +49,93 @@ function App() {
     setRaceOption(event.target.value);
   };
 
+  function validateForm() {
+    
+    if (firstName.length == 0) {
+      alert('Invalid Form. First Name can not be empty.')
+      return
+    }
+    if (lastName.length == 0) {
+      alert('Invalid Form, Last Name can not be empty.')
+      return
+    }
+    if (emailAddress == 0) {
+      alert('Invalid Form, Email Address can not be empty.')
+      return
+    }
+    if (password < 8) {
+      alert('Invalid Form, Password must contain greater than or equal to 8 characters.')
+      return
+    }
+    //count upper case characters in the password
+    let countUpperCase = 0
+    //count lower case characters in password
+    let countLowerCase = 0
+    //count digit characters in password
+    let countDigit = 0
+    //count special characters in password
+    let countSpecialCharacters = 0
+    for (let i = 0; i < password.length; i++) {
+      const specialChars = [
+        '!',
+        '@',
+        '#',
+        '$',
+        '%',
+        '^',
+        '&',
+        '*',
+        '(',
+        ')',
+        '_',
+        '-',
+        '+',
+        '=',
+        '[',
+        '{',
+        ']',
+        '}',
+        ':',
+        ';',
+        '<',
+        '>',
+      ]
+      if (specialChars.includes(password[i])) {
+        countSpecialCharacters++
+      } else if (!isNaN(password[i] * i)) {
+        countDigit++
+      } else {
+        if (password[i] == password[i].toUpperCase()) {
+          countUpperCase++
+        }
+        if (password[i] == password[i].toLowerCase()) {
+          countLowerCase++
+        }
+      }
+    }
+    if (countLowerCase == 0) {
+      alert('Invalid Form, 0 lower case characters in password.')
+      return
+    }
+    if (countUpperCase == 0) {
+      alert('Invalid Form, 0 upper case characters in password.')
+      return
+    }
+    if (countDigit == 0) {
+      alert('Invalid Form, 0 digit characters in password.')
+      return
+    }
+    if (countSpecialCharacters == 0 ) {
+      alert('Invalid Form, 0 special characters in password.')
+      return
+    }
+    alert('Form is valid')
+  }
+
   return (
     <>
       <div style={{ width: "620px", height: "800px", border: "1px solid gray" }}>
+        <form>
         <div className='formHead'>
           <h2 className='registrant-title'>Registrant #
             <span className='registrantNum'>1</span></h2>
@@ -77,24 +161,40 @@ function App() {
         </div>
         <br></br>
         <div  >
-          <label>First Name: 
-            <input type="text" name="first_Name" value={firstName} onChange={e => setFirstName(e.target.value)}></input>
+          <label>First Name:
+            <input 
+              type='text'
+              name='first_Name'
+              value={firstName}
+              placeholder='Enter first name...'
+              onChange={e => setFirstName(e.target.value)}
+            />
           </label>
 
-          <label>Last Name: 
-            <input type="text" name="last_Name" value={lastName}
-              onChange={e => setLastName(e.target.value)}></input>
+          <label>Last Name:
+            <input
+              type='text'
+              name='last_Name'
+              placeholder='Enter last name...'
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}
+            />
           </label>
 
           <br></br>
           <br></br>
 
-          <label>Email Address: 
-            <input type='text' name='email_address' value={emailAddress}
-              onChange={e => setEmailAdress(e.target.value)}></input>
+          <label>Email Address:
+            <input 
+              type='text' 
+              name='email_address'
+              placeholder='Type your email...'
+              value={emailAddress}
+              onChange={e => setEmailAdress(e.target.value)}
+            />
           </label>
 
-          <label>Confirm Email: 
+          <label>Confirm Email:
             <input type='text' name='confirm_email' value={confirmEmail}
               onChange={e => setConfirmEmail(e.target.value)}></input>
           </label>
@@ -102,12 +202,12 @@ function App() {
           <br></br>
           <br></br>
 
-          <label>Create Password: 
-            <input type='text' name='create_password' value={createPassword}
-              onChange={e => setCreatePassword(e.target.value)}></input>
+          <label>Create Password:
+            <input type='text' name='create_password' value={password}
+              onChange={e => setPassword(e.target.value)}></input>
           </label>
 
-          <label>Confirm Password: 
+          <label>Confirm Password:
             <input type='text' name='confirm_password' value={confirmPassword}
               onChange={e => setConfirmPassword(e.target.value)}></input>
           </label>
@@ -116,7 +216,7 @@ function App() {
         </div>
         <br></br>
         <div>
-          <label>Date of Birth: 
+          <label>Date of Birth:
             <input type="date" name='d.o.b.' value={DOB}
               onChange={e => setDOB(e.target.value)}></input>
           </label>
@@ -194,7 +294,12 @@ function App() {
         <br></br>
         <button>Add Another Registrant</button>
         <br></br>
-        <button>Continue</button>
+        <button 
+          type='submit'
+          onClick={() => {validateForm()}}>
+            Continue
+        </button>
+        </form>
       </div>
 
     </>
