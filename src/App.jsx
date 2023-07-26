@@ -17,7 +17,7 @@ const testingOnly = async () => {
       returning: "minimal", //prevent errors when inserting with RLS on
     }
   );
-  console.log({data, error});
+  console.log({ data, error });
 };
 testingOnly();
 
@@ -70,7 +70,7 @@ function App() {
   };
 
   function validateForm() {
-    
+
     return
 
     if (firstName.length == 0) {
@@ -234,9 +234,9 @@ function App() {
             </label>
 
             <label>Confirm Email:
-              <input 
-                type='text' 
-                name='confirm_email' 
+              <input
+                type='text'
+                name='confirm_email'
                 value={confirmEmail}
                 onChange={e => setConfirmEmail(e.target.value)}></input>
             </label>
@@ -284,29 +284,29 @@ function App() {
             <br></br>
 
             <label>Phone: </label>
-            <input 
-              type='text' 
-              name='phone' 
+            <input
+              type='text'
+              name='phone'
               placeholder='###-###-####'
               value={phone}
-              onChange={e => setPhone(e.target.value)} required></input> 
+              onChange={e => setPhone(e.target.value)} required></input>
           </div>
 
           <br></br>
 
           <div>
             <label>Street Address: </label>
-            <input 
-              type='text' 
-              name='street_address' 
+            <input
+              type='text'
+              name='street_address'
               value={streetAddress}
-              onChange={e => setStreetAddress(e.target.value)} 
+              onChange={e => setStreetAddress(e.target.value)}
               required></input>
 
             <label>Country: </label>
-            <input 
-              type='text' 
-              name='country' 
+            <input
+              type='text'
+              name='country'
               value={country}
               onChange={e => setCountry(e.target.value)}
               required></input>
@@ -314,9 +314,9 @@ function App() {
             <br></br>
 
             <label>Zip Code: </label>
-            <input 
-              type='text' 
-              name='zipCode' 
+            <input
+              type='text'
+              name='zipCode'
               value={zipCode}
               onChange={e => setZipCode(e.target.value)}
               required></input>
