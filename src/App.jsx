@@ -140,6 +140,14 @@ function App() {
     }
   }
 
+  /*
+
+  const { error } = await supabase
+    .from('countries')
+    .insert({ id: 1, Name: {firstName} + {lastName}, DOB: {DOB}   })
+    
+  */
+
   return (
     <>
 
