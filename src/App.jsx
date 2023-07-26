@@ -1,6 +1,25 @@
 import { useState } from 'react'
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "./supabaseClient";
 import './App.css'
+
+//--------------------
+console.log({ supabase });
+
+const testingOnly = async () => {
+  let { data, error } = await supabase.from("registrants").insert(
+    [
+      {
+        Name: "Testing",
+        Age: "99",
+      },
+    ],
+    {
+      returning: "minimal", //prevent errors when inserting with RLS on
+    }
+  );
+  console.log({data, error});
+};
+testingOnly();
 
 function App() {
   const [] = useState("")
@@ -51,6 +70,8 @@ function App() {
   };
 
   function validateForm() {
+    
+    return
 
     if (firstName.length == 0) {
       alert('Invalid Form. First Name can not be empty.')
@@ -145,7 +166,7 @@ function App() {
   const { error } = await supabase
     .from('countries')
     .insert({ id: 1, Name: {firstName} + {lastName}, DOB: {DOB}   })
-    
+
   */
 
   return (
