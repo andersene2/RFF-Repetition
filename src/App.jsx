@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { createClient } from "@supabase/supabase-js";
+import supabase from "./Config/supabaseClient.js";
 import './App.css'
 
+console.log({ supabase })
+
 function App() {
-  const [] = useState("")
   const [registering, setRegistering] = useState("")
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
@@ -51,7 +52,7 @@ function App() {
   };
 
   function validateForm() {
-
+    return;
     if (firstName.length == 0) {
       alert('Invalid Form. First Name can not be empty.')
       return
