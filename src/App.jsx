@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { supabase } from "./supabaseClient";
 import './App.css'
 
-//--------------------
+/*--------This is the original strict input code for the db------------
 console.log({ supabase });
 
 const testingOnly = async () => {
@@ -10,7 +10,10 @@ const testingOnly = async () => {
     [
       {
         Name: "Testing",
-        Age: "99",
+        Gender: "Female",
+        Age: "21",
+        City: "San",
+        State: "Cali"
       },
     ],
     {
@@ -20,7 +23,7 @@ const testingOnly = async () => {
   console.log({ data, error });
 };
 testingOnly();
-
+*/
 function App() {
   const [] = useState("")
   const [registering, setRegistering] = useState("")
@@ -31,7 +34,7 @@ function App() {
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [DOB, setDOB] = useState("")
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');  //state for gender
   const [phone, setPhone] = useState("")
   const [streetAddress, setStreetAddress] = useState("")
   const [country, setCountry] = useState("")
@@ -69,9 +72,24 @@ function App() {
     setRaceOption(event.target.value);
   };
 
-  function validateForm() {
+  const validateForm = async () => {
 
-    return
+    let { data, error } = await supabase.from("registrants").insert(
+      [
+        {
+          Name: {firstName},
+          Gender: {selectedOption},
+          Age: "81",
+          City: {city},
+          State: {state},
+        },
+      ],
+      {
+        returning: "minimal", //prevent errors when inserting with RLS on
+      }
+    );
+    console.log({ data, error });
+
 
     if (firstName.length == 0) {
       alert('Invalid Form. First Name can not be empty.')
@@ -160,14 +178,6 @@ function App() {
       return
     }
   }
-
-  /*
-
-  const { error } = await supabase
-    .from('countries')
-    .insert({ id: 1, Name: {firstName} + {lastName}, DOB: {DOB}   })
-
-  */
 
   return (
     <>
