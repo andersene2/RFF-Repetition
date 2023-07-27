@@ -35,7 +35,7 @@ function App() {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [DOB, setDOB] = useState("")
   const [selectedOption, setSelectedOption] = useState('');  //state for gender
-  const [phone, setPhone] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
   const [streetAddress, setStreetAddress] = useState("")
   const [country, setCountry] = useState("")
   const [zipCode, setZipCode] = useState("")
@@ -56,7 +56,7 @@ function App() {
     setConfirmPassword("");
     setDOB("");
     setSelectedOption(''); //state for gender 
-    setPhone("");
+    setPhoneNumber("");
     setStreetAddress("");
     setCountry("");
     setZipCode("");
@@ -71,17 +71,23 @@ function App() {
   const handleRaceChange = (event) => {
     setRaceOption(event.target.value);
   };
-
-  const validateForm = async () => {
+  //____________________________________________
+  const validateForm = async () =>{
 
     let { data, error } = await supabase.from("registrants").insert(
       [
         {
-          Name: {firstName},
-          Gender: {selectedOption},
-          Age: "81",
-          City: {city},
-          State: {state},
+          first_name: { firstName },
+          last_name: { lastName },
+          email: { emailAddress },
+          dob: { DOB },
+          address: { streetAddress },
+          phone: { phoneNumber },
+          zip: { zipCode },
+          country: { country },
+          city: { city },
+          state: { state },
+          race: { raceOption },
         },
       ],
       {
@@ -178,7 +184,7 @@ function App() {
       return
     }
   }
-
+  //____________________________________________
   return (
     <>
 
@@ -298,8 +304,8 @@ function App() {
               type='text'
               name='phone'
               placeholder='###-###-####'
-              value={phone}
-              onChange={e => setPhone(e.target.value)} required></input>
+              value={phoneNumber}
+              onChange={e => setPhoneNumber(e.target.value)} required></input>
           </div>
 
           <br></br>
