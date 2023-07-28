@@ -4,13 +4,14 @@ import { Formik, Form, Field, ErrorMessage } from "formik"; // Formik library fo
 import * as Yup from "yup"; // Yup library for form validation
 import "./App.css"; // CSS file for styling the app
 
+
+const clearAllFields = () => {
+  // Implement the logic to reset all state values
+
+};
 // Main function that represents the App component
 function App() {
-  // Function to clear all form fields (currently empty, needs to be implemented)
-  const clearAllFields = () => {
-    // Implement the logic to reset all state values
 
-  };
 
   // Define the validation schema using Yup
   const validationSchema = Yup.object({
