@@ -8,7 +8,8 @@ import "./App.css"; // CSS file for styling the app
 function App() {
   // Function to clear all form fields (currently empty, needs to be implemented)
   const clearAllFields = () => {
-    // TODO: Implement the logic to reset all state values
+    // Implement the logic to reset all state values
+
   };
 
   // Define the validation schema using Yup
@@ -108,6 +109,130 @@ function App() {
                   required
                 />
                 <ErrorMessage name="firstName" component="div" />
+
+                <label>Last Name: </label>
+                <Field
+                  type="text"
+                  name="lastName"
+                  placeholder="Enter last name..."
+                  required
+                />
+                <ErrorMessage name="lastName" component="div" />
+                <br />
+
+                <label>Email Address: </label>
+                <Field
+                  type="text"
+                  name="emailAddress"
+                  placeholder="Enter your email..."
+                  required
+                />
+                <ErrorMessage name="emailAddress" component="div" />
+
+                <label>Confirm Email: </label>
+                <Field 
+                  type="text"
+                  name="confirmEmail"
+                  required
+                />
+                <ErrorMessage name="confirmEmail" component="div" />
+                <br />
+
+                <label>Create Password: </label>
+                <Field 
+                  type="password"
+                  name="password"
+                  required
+                />
+                <ErrorMessage name="password" component="div" />
+
+                <label>Confirm Password</label>
+                <Field 
+                type="password"
+                name="confirmPassword"
+                required
+                />
+                <ErrorMessage name="confirmPassword" component="div" />
+                <br />
+                
+                <label>Date of Birth: </label>
+                <Field 
+                  type="date"
+                  name="DOB"
+                  required
+                />
+                <ErrorMessage name="DOB" component="div" />
+
+                <span>Gender: </span>
+
+                <label>
+                  <Field 
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  required
+                  />
+                  Male
+                </label>
+
+                <label>
+                  <Field 
+                    type='radio'
+                    id='female'
+                    name='gender'
+                    required
+                  />
+                  Female
+                </label>
+                <br />
+
+                <label>Phone  
+                  <Field 
+                    type="text"
+                    name="phone_Number"
+                    placeholder="###-###-####"
+                    required
+                  />
+                </label>
+                <br />
+
+                <label>Street Address: </label>
+                <Field 
+                  type="text"
+                  name="streetAddress"
+                  required
+                />
+
+                <label>Country: </label>
+                <Field 
+                  type="text"
+                  name="country"
+                  required
+                />
+                <br />
+
+                <label>Zip Code: </label>
+                <Field
+                  type="text"
+                  name="zipCode"
+                  required
+                />
+
+                <label>City: </label>
+                <Field
+                  type="text"
+                  name="city"
+                  required
+                />
+                <br />
+
+                <label>State: </label>
+                <Field
+                  type="text"
+                  name="state"
+                  required
+                />
+
 
                 {/* ... (other form fields) ... */}
 
