@@ -55,7 +55,7 @@ function App() {
             password: "",
             confirmPassword: "",
             DOB: "",
-            selectedOption: "",
+            gender: "",
             phone: "",
             streetAddress: "",
             country: "",
@@ -171,7 +171,7 @@ function App() {
                   <Field
                     type="radio"
                     id="male"
-                    name="selectedOption"
+                    name="gender"
                     value='male'
                     required
                   />
@@ -182,7 +182,7 @@ function App() {
                   <Field
                     type='radio'
                     id='female'
-                    name='selectedOption'
+                    name='gender'
                     value='female'
                     required
                   />
