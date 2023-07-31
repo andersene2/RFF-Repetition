@@ -8,6 +8,7 @@ import "./App.css"; // CSS file for styling the app
 const clearAllFields = () => {
   // Implement the logic to reset all state values
 
+
 };
 // Main function that represents the App component
 function App() {
@@ -102,7 +103,7 @@ function App() {
               <br />
               {/* Other form fields with input elements */}
               <div>
-                <label>First Name:</label>
+                <label htmlFor="firstName">First Name:</label>
                 <Field
                   type="text"
                   name="firstName"
@@ -111,7 +112,7 @@ function App() {
                 />
                 <ErrorMessage name="firstName" component="div" />
 
-                <label>Last Name: </label>
+                <label htmlFor="lastName">Last Name: </label>
                 <Field
                   type="text"
                   name="lastName"
@@ -121,7 +122,7 @@ function App() {
                 <ErrorMessage name="lastName" component="div" />
                 <br />
 
-                <label>Email Address: </label>
+                <label htmlFor="emailAddress">Email Address: </label>
                 <Field
                   type="text"
                   name="emailAddress"
@@ -130,8 +131,8 @@ function App() {
                 />
                 <ErrorMessage name="emailAddress" component="div" />
 
-                <label>Confirm Email: </label>
-                <Field 
+                <label htmlFor="confirmEmail">Confirm Email: </label>
+                <Field
                   type="text"
                   name="confirmEmail"
                   required
@@ -139,25 +140,25 @@ function App() {
                 <ErrorMessage name="confirmEmail" component="div" />
                 <br />
 
-                <label>Create Password: </label>
-                <Field 
+                <label htmlFor="password">Create Password: </label>
+                <Field
                   type="password"
                   name="password"
                   required
                 />
                 <ErrorMessage name="password" component="div" />
 
-                <label>Confirm Password</label>
-                <Field 
-                type="password"
-                name="confirmPassword"
-                required
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <Field
+                  type="password"
+                  name="confirmPassword"
+                  required
                 />
                 <ErrorMessage name="confirmPassword" component="div" />
                 <br />
-                
-                <label>Date of Birth: </label>
-                <Field 
+
+                <label htmlFor="DOB">Date of Birth: </label>
+                <Field
                   type="date"
                   name="DOB"
                   required
@@ -166,60 +167,61 @@ function App() {
 
                 <span>Gender: </span>
 
-                <label>
-                  <Field 
-                  type="radio"
-                  id="male"
-                  name="gender"
-                  required
+                <label htmlFor="male">
+                  <Field
+                    type="radio"
+                    id="male"
+                    name="selectedOption"
+                    value='male'
+                    required
                   />
                   Male
                 </label>
 
-                <label>
-                  <Field 
+                <label htmlFor="female">
+                  <Field
                     type='radio'
                     id='female'
-                    name='gender'
+                    name='selectedOption'
+                    value='female'
                     required
                   />
                   Female
                 </label>
                 <br />
 
-                <label>Phone  
-                  <Field 
-                    type="text"
-                    name="phone_Number"
-                    placeholder="###-###-####"
-                    required
-                  />
-                </label>
+                <label htmlFor="phone">Phone: </label>
+                <Field
+                  type="text"
+                  name="phone"
+                  placeholder="###-###-####"
+                  required
+                />
                 <br />
 
-                <label>Street Address: </label>
-                <Field 
+                <label htmlFor="streetAddress">Street Address: </label>
+                <Field
                   type="text"
                   name="streetAddress"
                   required
                 />
 
-                <label>Country: </label>
-                <Field 
+                <label htmlFor="country">Country: </label>
+                <Field
                   type="text"
                   name="country"
                   required
                 />
                 <br />
 
-                <label>Zip Code: </label>
+                <label htmlFor="zipCode">Zip Code: </label>
                 <Field
                   type="text"
                   name="zipCode"
                   required
                 />
 
-                <label>City: </label>
+                <label htmlFor="city">City: </label>
                 <Field
                   type="text"
                   name="city"
@@ -227,7 +229,7 @@ function App() {
                 />
                 <br />
 
-                <label>State: </label>
+                <label htmlFor="state">State: </label>
                 <Field
                   type="text"
                   name="state"
