@@ -94,9 +94,15 @@ function App() {
                   <option disabled value="">
                     -Choose option-
                   </option>
+<<<<<<< Updated upstream
                   <option value="me">Me, 18+</option>
                   <option value="other_adult">Other Adult, 18+</option>
                   <option value="minor">Minor, Under 18</option>
+=======
+                  <option value="me" >Me, 18+</option>
+                  <option value="other_adult" >Other Adult, 18+</option>
+                  <option value="minor" >Minor, Under 18</option>
+>>>>>>> Stashed changes
                 </Field>
                 <ErrorMessage name="registering" component="div" />
               </div>
@@ -165,29 +171,30 @@ function App() {
                 />
                 <ErrorMessage name="DOB" component="div" />
 
-                <span>Gender: </span>
+                <span>Gender:
 
-                <label htmlFor="male">
-                  <Field
-                    type="radio"
-                    id="male"
-                    name="gender"
-                    value='male'
-                    required
-                  />
-                  Male
-                </label>
+                  <label htmlFor="gender">
+                    <Field
+                      type="radio"
+                      id="male"
+                      name="gender"
+                      value='male'
+                      required
+                    />
+                    Male
+                  </label>
 
-                <label htmlFor="female">
-                  <Field
-                    type='radio'
-                    id='female'
-                    name='gender'
-                    value='female'
-                    required
-                  />
-                  Female
-                </label>
+                  <label htmlFor="gender">
+                    <Field
+                      type='radio'
+                      id='female'
+                      name='gender'
+                      value='female'
+                      required
+                    />
+                    Female
+                  </label>
+                </span>
                 <br />
 
                 <label htmlFor="phone">Phone: </label>
@@ -235,11 +242,31 @@ function App() {
                   name="state"
                   required
                 />
-
-
-                {/* ... (other form fields) ... */}
-
                 <br />
+                <h2>Choose Your Event</h2>
+                {/* ... (other form fields) ... */}
+                <div>
+                  <label  htmlFor="raceOption">
+                    <Field
+                      type='radio'
+                      name='raceOption'
+                      id="5K"
+                      value="5K"
+                    />
+                    5K ($35.00 + $3.60 SignUp Fee)
+                  </label>
+                  <br />
+                  <label htmlFor="raceOption">
+                    <Field
+                      type='radio'
+                      name='raceOption'
+                      id='5k-Virtual'
+                      value="5k-Virtual"
+                    />
+                    5K Virtual ($35.00 + $3.60 SignUp Fee)
+                  </label>
+                </div>
+
                 <br />
 
                 {/* Form submission button */}
