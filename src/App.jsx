@@ -235,7 +235,7 @@ function App() {
                   type="text"
                   name="state"
                   required
-                />
+                /> 
 
 
                 {/* ... (other form fields) ... */}
