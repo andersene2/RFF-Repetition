@@ -94,15 +94,9 @@ function App() {
                   <option disabled value="">
                     -Choose option-
                   </option>
-<<<<<<< Updated upstream
-                  <option value="me">Me, 18+</option>
-                  <option value="other_adult">Other Adult, 18+</option>
-                  <option value="minor">Minor, Under 18</option>
-=======
                   <option value="me" >Me, 18+</option>
                   <option value="other_adult" >Other Adult, 18+</option>
                   <option value="minor" >Minor, Under 18</option>
->>>>>>> Stashed changes
                 </Field>
                 <ErrorMessage name="registering" component="div" />
               </div>
