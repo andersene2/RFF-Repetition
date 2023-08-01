@@ -47,7 +47,7 @@ function App() {
         <Formik
           initialValues={{
             // Initial values for the form fields
-            registering: "",
+            applicant: "",
             firstName: "",
             lastName: "",
             emailAddress: "",
@@ -94,7 +94,7 @@ function App() {
                   <option disabled value="">
                     -Choose option-
                   </option>
-                  <option value="me" >Me, 18+</option>
+                  <option value="User 18+" >Me, 18+</option>
                   <option value="other_adult" >Other Adult, 18+</option>
                   <option value="minor" >Minor, Under 18</option>
                 </Field>
