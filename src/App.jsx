@@ -90,7 +90,7 @@ function App() {
               <div>
                 {/* Select field to choose the registrant */}
                 <label htmlFor="applicant">Who are you registering: </label>
-                <Field as="select" id="applicant" name="registering" required>
+                <Field as="select" id="applicant" name="applicant" required>
                   <option disabled value="">
                     -Choose option-
                   </option>
@@ -98,7 +98,7 @@ function App() {
                   <option value="other_adult" >Other Adult, 18+</option>
                   <option value="minor" >Minor, Under 18</option>
                 </Field>
-                <ErrorMessage name="registering" component="div" />
+                <ErrorMessage name="applicant" component="div" />
               </div>
               <br />
               {/* Other form fields with input elements */}
@@ -165,30 +165,27 @@ function App() {
                 />
                 <ErrorMessage name="DOB" component="div" />
 
-                <span>Gender:
+                <span>Gender: </span>
 
-                  <label htmlFor="gender">
-                    <Field
-                      type="radio"
-                      id="male"
-                      name="gender"
-                      value='male'
-                      required
-                    />
-                    Male
-                  </label>
+                <label htmlFor="gender">
+                  <Field
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    value='male'
+                  />
+                  Male
+                </label>
 
-                  <label htmlFor="gender">
-                    <Field
-                      type='radio'
-                      id='female'
-                      name='gender'
-                      value='female'
-                      required
-                    />
-                    Female
-                  </label>
-                </span>
+                <label htmlFor="gender">
+                  <Field
+                    type='radio'
+                    name="gender"
+                    id='female'
+                    value='female'
+                  />
+                  Female
+                </label>
                 <br />
 
                 <label htmlFor="phone">Phone: </label>
@@ -240,7 +237,7 @@ function App() {
                 <h2>Choose Your Event</h2>
                 {/* ... (other form fields) ... */}
                 <div>
-                  <label  htmlFor="raceOption">
+                  <label htmlFor="raceOption">
                     <Field
                       type='radio'
                       name='raceOption'

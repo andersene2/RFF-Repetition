@@ -22,10 +22,12 @@ serve(async (req) => {
   try {
     // Parse the incoming JSON data from the request body
     const {
+      applicant,
       firstName,
       lastName,
       emailAddress,
       DOB,
+      gender,
       phone,
       streetAddress,
       country,
@@ -40,10 +42,12 @@ serve(async (req) => {
     // Insert the form data into the "registrants" table in Supabase
     const { data, error } = await supabase.from("registrants").insert([
       {
+        applicant, 
         first_name: firstName,
         last_name: lastName,
         email: emailAddress,
         dob: DOB,
+        gender, 
         address: streetAddress,
         phone,
         zip: zipCode,
