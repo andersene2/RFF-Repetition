@@ -5,11 +5,7 @@ import * as Yup from "yup"; // Yup library for form validation
 import "./App.css"; // CSS file for styling the app
 
 
-const clearAllFields = () => {
-  // Implement the logic to reset all state values
 
-
-};
 // Main function that represents the App component
 function App() {
 
@@ -75,12 +71,7 @@ function App() {
                 <h2 className="registrant-title">
                   Registrant #<span className="registrantNum">1</span>
                 </h2>
-                <div>
-                  {/* Button to clear all form fields */}
-                  <button type="button" onClick={clearAllFields}>
-                    Clear all fields
-                  </button>
-                </div>
+
               </div>
               <button type="button">Sign In</button>
               <label>Login with your RunSignup account.</label>
@@ -155,6 +146,7 @@ function App() {
                   required
                 />
                 <ErrorMessage name="confirmPassword" component="div" />
+                <br />
                 <br />
 
                 <label htmlFor="DOB">Date of Birth: </label>
