@@ -35,10 +35,10 @@ Process of creating the project.
         the basics of the form done first. This would include main variables, functions, or inputs. Once
         that is done then you can make it look pretty.
 
-15.) Once you get the main basics done, this would be a good time to open Supabase (https://supabase.com/).
+15.) Once you get the main basics done, this would be a good time to open  and sign into Supabase (https://supabase.com/).
 
 16.) Once you sign into supabase you should go into the dashboard (https://supabase.com/dashboard/projects#).
-        Then click new project, make an organization, (name isn't crazy important, although this is not the 
+        Then click new project, make an organization, ( the name of the organization isn't crazy important, although this is not the 
         name of your project.)
 
 17.) After you make and choose the organization it will give you a form asking for the project name,
@@ -76,7 +76,7 @@ Process of creating the project.
 22.) After adding that code to your file, go back to your main "App.jsx" file and at the top add
         "import {supabase} from "./supabaseClient";
 
-||  A co-worker of mine did this part so this may be a bit off || (check out https://formik.org/docs/overview for more)
+||  A co-worker of mine did this part so this may be a bit off || (check out https://formik.org/docs/overview to learn more about formik, very important)
 
 23.) In your terminal, you are going to write the command, "npm install formik --save"
         Formik keeps track of your form's state and exposes it, plus it has reusable methods and 
@@ -93,7 +93,8 @@ Process of creating the project.
 26.) Formik gets rid of the use for states, so outside the form I made an object called "initialValues".
         This holds all of the values I will be using in the form for each input, setting them to a ("").
 
-27.) I then made a file called "index.ts" where on line 43, sends the input of the values into the database made on                 Supabase. This is because in the database I made the columns of each input it should be recieving. 
+27.) I then made a file called "index.ts" where on line 43, sends the input of the values into the database made on 
+        Supabase. This is because in the database I made the columns of each input it should be recieving. 
         You can see that it goes:
             applicant,
             first_name: firstName,
@@ -140,8 +141,33 @@ because with formik they more or less do the same thing, although I keep mine as
                 settings and looking for the Reference ID. It should be in General.
             Once you have done that, it should say "Deployed Function 'submit-form-edge' on project 'your_project_ref'.
         Your edge function should now be deployed and connected to your form and Supabase db.
+
+----------------------------------
+
+This area of the readme are some of the errors I made along the way of creating the form.
+
+These errors may not be in specific order of making the form, just some that I could think of that may be important.
         
-            
+- When I started this project I did not know what "async" fucntions were. Make sure to do some research on those. (
+      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function ) I used this
+      link to help me although other research is still good.
+
+- Make sure the values in your "initialValues" variable, matches the values index.ts file.
+        This includes the "try" call on line 22, and the "const { data, error }" call on line 43.
+
+- Understand that it is important to leave comments in your code so either you or other developers can gain
+          more information when looking through your code. I did not do this at first a although it was
+          not a major issue, it does save time.
+
+- Use the commands pallete in vs code to modify the app, I usually use it for the "Format Document" call. Although
+        it can do a lot more than that.
+
+- When using the terminal most of the time make sure you are using the "commands prompt". and not powershell.
+
+- I sugguest to learn more about the "validationSchema" and how to modify/add to it.
+
+- When debugging your form, note that you can also right click on the localhost form, and click on inspect. This was really
+        helpful for me when learning what was wrong with my code as well.
 
         
 
